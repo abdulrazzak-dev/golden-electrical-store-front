@@ -2,7 +2,7 @@
 
 A professional, responsive commercial storefront website built for an electrical manufacturing and supply business. It showcases high-quality electrical components, categorical distributions, and a lead generation structure.
 
-👉 **Live Demo:** [https://aharazzak.github.io/Project--Electrical-web-sit-/](https://aharazzak.github.io/Project--Electrical-web-sit-/)
+👉 **Live Demo:** [https://abdulrazzak-dev.github.io/golden-electrical-store-front/](https://abdulrazzak-dev.github.io/golden-electrical-store-front/)
 
 ---
 
