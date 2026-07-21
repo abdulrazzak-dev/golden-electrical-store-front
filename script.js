@@ -128,8 +128,8 @@ function initHeroCanvas() {
     reset() {
       this.x = Math.random() * W;
       this.y = Math.random() * H;
-      this.vx = (Math.random() - 0.5) * 0.6;
-      this.vy = (Math.random() - 0.5) * 0.6;
+      this.vx = (Math.random() - 0.5) * 0.25;
+      this.vy = (Math.random() - 0.5) * 0.25;
       this.r = Math.random() * 2 + 0.5;
       this.alpha = Math.random() * 0.6 + 0.1;
       this.color = Math.random() > 0.6 ? '255,215,0' : '0,180,255';
@@ -260,7 +260,7 @@ function initTheme() {
   const toggles = [document.getElementById('themeToggle'), document.getElementById('themeToggleMobile')];
   const icons = [document.getElementById('themeIcon'), document.getElementById('themeIconMobile')];
 
-  const saved = localStorage.getItem('ge-theme') || 'dark';
+  const saved = localStorage.getItem('ge-theme') || 'light';
   html.setAttribute('data-theme', saved);
   updateIcons(saved);
 
