@@ -1,36 +1,16 @@
-# ⚡ Golden Electrical & Manufactures 
+# React + Vite
 
-A professional, responsive commercial storefront website built for an electrical manufacturing and supply business. It showcases high-quality electrical components, categorical distributions, and a lead generation structure.
+This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
 
-👉 **Live Demo:** [https://abdulrazzak-dev.github.io/golden-electrical-store-front/](https://abdulrazzak-dev.github.io/golden-electrical-store-front/)
+Currently, two official plugins are available:
 
----
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
-## 🎨 Project Overview
+## React Compiler
 
-This website serves as a functional product catalog and sales conduit for "Golden Electrical & Manufactures." It focuses heavily on structured user experience (UX) layout design, product highlighting, and pricing layout transparency.
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## 🚀 Key Features
+## Expanding the Oxlint configuration
 
-- **Dynamic Product Cards:** Interactive product listings utilizing contextual ribbon badges (`BEST SELLER`, `SALE`, `NEW`) and individual price calls.
-- **Categorical Navigation:** Structured item divisions highlighting Lighting, Connectors, Circuit Protection, and Tools.
-- **B2B / Lead Capture System:** Integrated customer inquiry form tailored for quick "Get Quote" actions.
-- **Responsive Architecture:** Flexibly optimized to adapt gracefully between smartphones, tablets, laptops, and wide monitors.
-- **Comprehensive Company Footer:** Clean placement of retail operations parameters including address, hotline coordinates, and service hours.
-
----
-
-## 🛠️ Built With
-
-- **HTML5:** Standard semantic elements leveraged for modern accessibility standards.
-- **CSS3:** Custom layouts, grids, navigation bars, and element hover states.
-- **GitHub Pages:** Used for production deployment and free static hosting.
-
----
-
-## 📂 Repository Structure
-
-```text
-├── logo.png               # Main business logo asset
-├── index.html             # Central entry file holding the structural website makeup
-└── README.md              # Project documentation file
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
