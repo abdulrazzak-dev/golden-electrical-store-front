@@ -116,12 +116,12 @@ const PRODUCTS = [
 ];
 
 const CATEGORIES = [
-  { id: "lighting", name: "Lighting", count: "48 Items", icon: "💡", image: "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=400&q=80" },
-  { id: "switches", name: "Switches", count: "35 Items", icon: "🔌", image: "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=400&q=80" },
-  { id: "wires & cables", name: "Wires & Cables", count: "62 Items", icon: "〰️", image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=80" },
-  { id: "fans", name: "Fans", count: "29 Items", icon: "🌀", image: "https://images.unsplash.com/photo-1618944847828-82e943c3dba7?w=400&q=80" },
-  { id: "home appliances", name: "Home Appliances", count: "44 Items", icon: "🍳", image: "https://images.unsplash.com/photo-1574269661728-796aa9c48cb8?w=400&q=80" },
-  { id: "tools", name: "Tools", count: "55 Items", icon: "🛠️", image: "https://images.unsplash.com/photo-1581244277943-fe4a9c777189?w=400&q=80" }
+  { id: "lighting", name: "Lighting", count: "48 Items", icon: "💡", gradient: "from-amber-400 to-yellow-300", glow: "shadow-amber-500/20", lightBg: "bg-amber-50/70", hoverText: "group-hover:text-amber-600" },
+  { id: "switches", name: "Switches", count: "35 Items", icon: "🔌", gradient: "from-cyan-400 to-blue-400", glow: "shadow-blue-500/20", lightBg: "bg-cyan-50/70", hoverText: "group-hover:text-blue-600" },
+  { id: "wires & cables", name: "Wires & Cables", count: "62 Items", icon: "〰️", gradient: "from-violet-400 to-purple-400", glow: "shadow-purple-500/20", lightBg: "bg-purple-50/70", hoverText: "group-hover:text-purple-600" },
+  { id: "fans", name: "Fans", count: "29 Items", icon: "🌀", gradient: "from-teal-400 to-emerald-400", glow: "shadow-teal-500/20", lightBg: "bg-teal-50/70", hoverText: "group-hover:text-teal-600" },
+  { id: "home appliances", name: "Home Appliances", count: "44 Items", icon: "🍳", gradient: "from-orange-400 to-red-400", glow: "shadow-red-500/20", lightBg: "bg-orange-50/70", hoverText: "group-hover:text-orange-600" },
+  { id: "tools", name: "Tools", count: "55 Items", icon: "🛠️", gradient: "from-indigo-400 to-slate-400", glow: "shadow-slate-500/20", lightBg: "bg-indigo-50/70", hoverText: "group-hover:text-indigo-600" }
 ];
 
 const BRANDS = [
@@ -283,12 +283,12 @@ export default function App() {
           
           {/* Logo */}
           <div className="flex items-center gap-3 cursor-pointer" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary shadow-sm">
-              <span className="text-xl font-bold text-secondary">⚡</span>
+            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-tr from-amber-500 via-orange-500 to-yellow-400 shadow-md shadow-orange-500/20 hover:scale-105 transition-transform">
+              <span className="text-xl font-bold text-white">⚡</span>
             </div>
             <div>
-              <span className="text-lg font-bold tracking-tight text-secondary">Golden <span className="text-primary font-extrabold">Electrical</span></span>
-              <p className="text-[10px] uppercase tracking-widest text-gray-400 font-semibold">Storefront</p>
+              <span className="text-lg font-extrabold tracking-tight text-secondary">Golden <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-orange-500 font-black">Electrical</span></span>
+              <p className="text-[10px] uppercase tracking-widest text-orange-500/80 font-bold">Storefront</p>
             </div>
           </div>
 
@@ -404,7 +404,12 @@ export default function App() {
       </AnimatePresence>
 
       {/* --- HERO SECTION --- */}
-      <section id="home" className="relative overflow-hidden bg-gradient-to-br from-gray-50 via-white to-gray-100 py-20 lg:py-32">
+      <section id="home" className="relative overflow-hidden bg-gradient-to-br from-slate-50 via-white to-amber-50/20 py-20 lg:py-32">
+        {/* Colorful Glow Blobs */}
+        <div className="absolute top-1/4 left-10 -z-10 h-72 w-72 rounded-full bg-amber-400/20 blur-[120px] animate-pulse"></div>
+        <div className="absolute bottom-1/4 right-10 -z-10 h-80 w-80 rounded-full bg-cyan-400/20 blur-[130px] animate-pulse duration-5000"></div>
+        <div className="absolute top-1/2 left-1/3 -z-10 h-60 w-60 rounded-full bg-purple-400/10 blur-[90px]"></div>
+
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:items-center">
             
@@ -415,12 +420,12 @@ export default function App() {
               transition={{ duration: 0.8 }}
               className="space-y-6"
             >
-              <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-4 py-1 text-xs font-semibold text-secondary">
-                <Sparkles className="h-3 w-3 text-primary fill-primary" />
+              <div className="inline-flex items-center gap-2 rounded-full border border-orange-500/20 bg-gradient-to-r from-amber-500/10 to-orange-500/10 px-4 py-1.5 text-xs font-bold text-orange-600">
+                <Sparkles className="h-3.5 w-3.5 text-orange-500 fill-orange-500/20 animate-spin-slow" />
                 Trusted Electrical Partner Since 2018
               </div>
-              <h1 className="text-4xl font-extrabold tracking-tight text-secondary sm:text-5xl md:text-6xl leading-[1.08] lg:leading-[1.05]">
-                Powering Modern Spaces with <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-orange-500">Premium Solutions</span>
+              <h1 className="text-4xl font-black tracking-tight text-secondary sm:text-5xl md:text-6xl leading-[1.08] lg:leading-[1.05]">
+                Powering Modern Spaces with <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 via-orange-500 to-red-500">Premium Solutions</span>
               </h1>
               <p className="max-w-md text-base text-gray-500 sm:text-lg">
                 Discover safe, durable, and energy-efficient electrical components curated for architectural excellence.
@@ -428,14 +433,14 @@ export default function App() {
               <div className="flex flex-wrap gap-4 pt-2">
                 <button 
                   onClick={() => scrollToSection('products')}
-                  className="group inline-flex items-center gap-2 rounded-xl bg-secondary px-6 py-3.5 text-sm font-semibold text-white shadow-lg transition-all hover:bg-secondary/90 hover:shadow-xl active:scale-95"
+                  className="group inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-amber-500 via-orange-500 to-red-500 px-6 py-3.5 text-sm font-bold text-white shadow-lg shadow-orange-500/20 transition-all hover:shadow-xl hover:shadow-orange-500/30 hover:scale-[1.02] active:scale-95"
                 >
                   Shop Now
                   <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </button>
                 <button 
                   onClick={() => scrollToSection('categories')}
-                  className="rounded-xl border border-gray-200 bg-white px-6 py-3.5 text-sm font-semibold text-gray-700 shadow-sm transition-all hover:bg-gray-50 active:scale-95"
+                  className="group rounded-xl border border-gray-200 bg-white px-6 py-3.5 text-sm font-bold text-gray-700 shadow-sm transition-all hover:border-orange-500/30 hover:text-orange-600 hover:shadow-md active:scale-95"
                 >
                   Explore Categories
                 </button>
@@ -444,16 +449,16 @@ export default function App() {
               {/* Minimal Trust Factors */}
               <div className="grid grid-cols-3 gap-4 pt-8 border-t border-gray-100">
                 <div>
-                  <h4 className="text-xl font-bold text-secondary">5k+</h4>
-                  <p className="text-xs text-gray-400 font-medium uppercase tracking-wide">Happy Clients</p>
+                  <h4 className="text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-orange-500">5k+</h4>
+                  <p className="text-[10px] text-gray-400 font-bold uppercase tracking-wider">Happy Clients</p>
                 </div>
                 <div>
-                  <h4 className="text-xl font-bold text-secondary">100%</h4>
-                  <p className="text-xs text-gray-400 font-medium uppercase tracking-wide">Certified Genuine</p>
+                  <h4 className="text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-500">100%</h4>
+                  <p className="text-[10px] text-gray-400 font-bold uppercase tracking-wider">Certified Genuine</p>
                 </div>
                 <div>
-                  <h4 className="text-xl font-bold text-secondary">24/7</h4>
-                  <p className="text-xs text-gray-400 font-medium uppercase tracking-wide">Expert Support</p>
+                  <h4 className="text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-500">24/7</h4>
+                  <p className="text-[10px] text-gray-400 font-bold uppercase tracking-wider">Expert Support</p>
                 </div>
               </div>
             </motion.div>
@@ -465,7 +470,7 @@ export default function App() {
               transition={{ duration: 0.8 }}
               className="relative lg:ml-6"
             >
-              <div className="absolute inset-0 -z-10 rounded-[2.5rem] bg-gradient-to-tr from-primary/10 to-orange-500/10 blur-3xl"></div>
+              <div className="absolute inset-0 -z-10 rounded-[2.5rem] bg-gradient-to-tr from-amber-500/20 to-orange-500/30 blur-3xl"></div>
               <div className="overflow-hidden rounded-[2rem] border border-gray-100 bg-white p-4 shadow-xl">
                 <img 
                   src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&q=80" 
@@ -502,23 +507,34 @@ export default function App() {
           <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
             {CATEGORIES.map((cat) => (
               <motion.div
-                whileHover={{ y: -6 }}
+                whileHover={{ y: -8, scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
                 key={cat.id}
                 onClick={() => {
                   setActiveCategory(cat.id);
                   scrollToSection('products');
                 }}
-                className={`group cursor-pointer rounded-2xl border p-4 text-center transition-all ${
+                className={`group cursor-pointer rounded-2xl border p-5 text-center transition-all duration-300 ${
                   activeCategory === cat.id 
-                    ? 'border-primary bg-primary/5 shadow-md' 
-                    : 'border-gray-100 bg-gray-50/50 hover:bg-white hover:shadow-lg'
+                    ? `border-transparent bg-gradient-to-br ${cat.gradient} text-white shadow-xl ${cat.glow}` 
+                    : `border-gray-100 bg-white hover:border-transparent hover:shadow-2xl hover:${cat.glow}`
                 }`}
               >
-                <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-white shadow-sm group-hover:scale-110 transition-transform duration-300">
-                  <span className="text-2xl">{cat.icon}</span>
+                <div className={`mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-2xl shadow-sm transition-all duration-300 ${
+                  activeCategory === cat.id 
+                    ? 'bg-white/20 text-white' 
+                    : `${cat.lightBg} group-hover:scale-110 group-hover:bg-gradient-to-br group-hover:${cat.gradient} group-hover:text-white`
+                }`}>
+                  <span className={`text-3xl transition-transform duration-300 ${
+                    activeCategory === cat.id ? 'scale-110' : 'group-hover:rotate-12'
+                  }`}>{cat.icon}</span>
                 </div>
-                <h3 className="text-xs font-bold text-secondary tracking-tight">{cat.name}</h3>
-                <p className="mt-1 text-[10px] text-gray-400 font-semibold">{cat.count}</p>
+                <h3 className={`text-xs font-bold tracking-tight transition-colors duration-300 ${
+                  activeCategory === cat.id ? 'text-white' : `text-secondary ${cat.hoverText}`
+                }`}>{cat.name}</h3>
+                <p className={`mt-1 text-[10px] font-semibold ${
+                  activeCategory === cat.id ? 'text-white/80' : 'text-gray-400'
+                }`}>{cat.count}</p>
               </motion.div>
             ))}
           </div>
@@ -570,6 +586,15 @@ export default function App() {
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
               {filteredProducts.map((p) => {
                 const isInWishlist = wishlist.some(item => item.id === p.id);
+                const getBadgeStyles = (badge) => {
+                  const b = badge.toLowerCase();
+                  if (b.includes('best') || b.includes('popular')) return 'bg-gradient-to-r from-amber-500 to-orange-500 text-white';
+                  if (b.includes('off') || b.includes('%')) return 'bg-gradient-to-r from-rose-500 to-pink-500 text-white';
+                  if (b.includes('new')) return 'bg-gradient-to-r from-emerald-500 to-teal-500 text-white';
+                  if (b.includes('exclusive')) return 'bg-gradient-to-r from-purple-500 to-indigo-500 text-white';
+                  if (b.includes('hot') || b.includes('deal')) return 'bg-gradient-to-r from-red-500 to-orange-600 text-white animate-pulse';
+                  return 'bg-secondary text-white';
+                };
                 return (
                   <motion.div
                     layout
@@ -580,7 +605,7 @@ export default function App() {
                     
                     {/* Badge */}
                     <div className="absolute left-4 top-4 z-10 flex flex-col gap-1">
-                      <span className="rounded-full bg-secondary/95 px-2.5 py-0.5 text-[9px] font-bold uppercase tracking-wider text-white shadow-sm">
+                      <span className={`rounded-full px-2.5 py-0.5 text-[9px] font-bold uppercase tracking-wider text-white shadow-sm ${getBadgeStyles(p.badge)}`}>
                         {p.badge}
                       </span>
                     </div>
@@ -645,17 +670,18 @@ export default function App() {
       {/* --- PROMOTIONAL BANNER --- */}
       <section className="py-12 bg-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="relative overflow-hidden rounded-[2.5rem] bg-gradient-to-r from-secondary to-gray-800 px-8 py-16 text-white shadow-xl md:px-16">
+          <div className="relative overflow-hidden rounded-[2.5rem] bg-gradient-to-br from-slate-950 via-indigo-950 to-slate-900 border border-indigo-500/20 px-8 py-16 text-white shadow-2xl md:px-16">
             
             {/* Glow Blobs */}
-            <div className="absolute right-0 top-0 -z-10 h-72 w-72 rounded-full bg-primary/20 blur-3xl"></div>
+            <div className="absolute right-0 top-0 -z-10 h-80 w-80 rounded-full bg-purple-500/20 blur-3xl animate-pulse"></div>
+            <div className="absolute left-1/3 bottom-0 -z-10 h-72 w-72 rounded-full bg-blue-500/10 blur-3xl"></div>
             
             <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:items-center">
               <div className="space-y-6">
-                <span className="inline-flex items-center gap-1 rounded-full bg-primary/20 px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-primary">
-                  <Percent className="h-3 w-3" /> Special B2B Wholesale Pricing
+                <span className="inline-flex items-center gap-1.5 rounded-full bg-gradient-to-r from-amber-500/20 to-orange-500/20 px-3 py-1.5 text-[10px] font-bold uppercase tracking-widest text-orange-400 border border-orange-500/20">
+                  <Percent className="h-3.5 w-3.5 text-orange-400" /> Special B2B Wholesale Pricing
                 </span>
-                <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl leading-tight">
+                <h2 className="text-3xl font-black tracking-tight sm:text-4xl leading-tight">
                   Premium Switchboards &amp; Panels Bulk Deals
                 </h2>
                 <p className="text-gray-300 text-sm max-w-md">
@@ -664,7 +690,7 @@ export default function App() {
                 <div className="flex gap-4">
                   <button 
                     onClick={() => scrollToSection('contact')}
-                    className="rounded-xl bg-primary px-6 py-3.5 text-xs font-bold text-secondary shadow-md hover:bg-primary/95 transition-all"
+                    className="rounded-xl bg-gradient-to-r from-amber-500 to-orange-500 px-6 py-3.5 text-xs font-bold text-white shadow-md shadow-orange-500/20 hover:from-amber-600 hover:to-orange-600 hover:shadow-lg active:scale-95 transition-all"
                   >
                     Request B2B Quote
                   </button>
